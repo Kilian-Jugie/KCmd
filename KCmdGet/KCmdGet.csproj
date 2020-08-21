@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KCmdCommand\KCmdCommand.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y bin\Debug\netcoreapp3.1\KCmdGet.dll ..\KCmd\bin\Debug\netcoreapp3.1\cmds" />
+  </Target>
+
+</Project>
